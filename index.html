@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>hai febii</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: linear-gradient(89deg, rgb(94, 115, 209), rgb(239, 129, 204));
+      justify-content:center;
+      align-items: center;
+      overflow: hidden;
+      
+    }
+    h1{
+        color:aliceblue;   
+        
+    }
+    img{
+      border:8px solid;
+      border-color:rgba(240, 255, 255, 0.386);
+      border-radius: 90px;
+      box-shadow: 6px 12px 8px rgba(0, 0, 0, 0.721);
+    }
+    
+
+    button {
+      
+      padding: 12px 24px;
+      font-size: 17px;
+      
+      border: none;
+      border-radius: 50px;
+      background: #ff69b4;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #ff1493;
+      transform: scale(1.2);
+    }
+
+    .flower {
+      position: absolute;
+      font-size: 30px;
+      animation: fall 7s linear forwards;
+    }
+    @keyframes bounce {
+          0%{
+            transform: scale(1);
+          }
+          50%{
+            transform: scale(1.2);
+          }
+          100%{
+            transform: scale(1);
+          }
+        }
+        button{
+          animation: bounce 1.5s infinite; 
+        } 
+    
+
+    @keyframes fall {
+      0% { transform: translateY(-50px) rotate(0deg); opacity: 1; }
+      100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 20px;
+      }
+      img {
+        max-width: 1000%;
+        
+      
+      }
+      button {
+        font-size: 0.9rem;
+        padding: 10px 20px;
+      }
+      .flower {
+        font-size: 40px;
+      }
+    }
+
+    /* Responsif untuk layar besar (Laptop/PC) */
+    @media (min-width: 1024px) {
+      h1 {
+        font-size: 40px;
+      }
+      img {
+        max-width: 200px;
+        
+      }
+      button {
+        font-size: 1.2rem;
+        padding: 14px 28px;
+      }
+      .flower {
+        font-size: 80px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <center>
+    <h1>Happy Birthday</h1><h1> Febry DwiLestari</h1>
+  
+   
+    <img src="foto6.jpeg" height="200px">
+  
+  
+    <br>
+    <br>
+    <br><br><br><br>
+    
+  <a href="ke1.html" onclick="delayLink(event, this.href)"><button onclick="releaseFlowers()"><strong>LANJUT</strong></button></a>
+
+  <script>
+    let nama = prompt('masukan nama anda')
+    let usia = prompt('berapa usia anda')
+
+     alert(' 🎂 Selamat ulang tahun yang ke-' + usia + ' tahun ' + ' ya febi🎉 ' + ' semoga panjang umur dan sehat selalu ✨')
+
+    
+    function releaseFlowers() {
+      for (let i = 0; i < 10; i++) {
+        let flower = document.createElement("div");
+        flower.className = "flower";
+        flower.innerHTML = "🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸🌸"; // bisa diganti <img src="bunga.png">          
+        flower.style.top = Math.random() * window.innerWidth + "px";
+        document.body.appendChild(flower);
+
+        // Hapus setelah animasi selesai
+        setTimeout(() => {
+          flower.remove();
+        }, 4000);
+      }
+    }
+    function delayLink(event, url) {
+      event.preventDefault(); // cegah pindah langsung
+      setTimeout(function() {
+        window.location.href = url; // pindah setelah delay
+      }, 3000); // delay 2000 ms = 2 detik
+    }
+
+  </script>
+</body>
+</html>
